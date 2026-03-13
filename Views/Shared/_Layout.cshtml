@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - @ViewData["SiteTitle"]</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Hayah.styles.css" asp-append-version="true" />
+</head>
+<body class="hayah-page" id="top">
+    <div class="hayah-matrix-overlay">
+        <pre class="hayah-code hayah-code-left">
+var requestId = Guid.NewGuid();
+var user = await _users.GetAsync(id, token);
+if (user is null) return Result.NotFound();
+foreach (var job in jobs)
+{
+    if (token.IsCancellationRequested) break;
+    await _processor.RunAsync(job, token);
+}
+using var stream = File.OpenRead(path);
+Span<byte> buffer = stackalloc byte[1024];
+var read = await stream.ReadAsync(buffer, token);
+if (read == 0) return Result.Empty;
+_log.LogInformation("hayah job {RequestId}", requestId);
+return Result.Success();var requestId = Guid.NewGuid();
+var user = await _users.GetAsync(id, token);
+if (user is null) return Result.NotFound();
+foreach (var job in jobs)
+{
+    if (token.IsCancellationRequested) break;
+    await _processor.RunAsync(job, token);
+}
+using var stream = File.OpenRead(path);
+Span<byte> buffer = stackalloc byte[1024];
+var read = await stream.ReadAsync(buffer, token);
+if (read == 0) return Result.Empty;
+_log.LogInformation("hayah job {RequestId}", requestId);
+return Result.Success();
+        </pre>
+        <pre class="hayah-code hayah-code-center">
+var x = GetId();
+var y = Run();
+foreach (var i in list) { }
+public void Execute() { }
+private ILogger _log;
+return await _client.SendAsync(r);
+if (token.IsCancellationRequested) return;
+throw new InvalidOperationException();
+using var stream = File.OpenRead(path);
+Span<byte> buffer = stackalloc byte[256];
+var id = Guid.NewGuid().ToString("N");
+var stamp = DateTimeOffset.UtcNow;
+var project = new { Name = "Hayah" };
+for (var i = 0; i < 1024; i++) { }
+Task<Result> BuildAsync(Brief b, CancellationToken t);
+var retry = 0; const int maxRetry = 3;
+while (retry++ < maxRetry) { }
+var connection = $"tcp://localhost:{NextPort()}";
+var traceId = TraceId();
+        </pre>
+        <pre class="hayah-code hayah-code-right">
+public sealed record HayahJob(
+    Guid Id,
+    string Name,
+    DateTimeOffset CreatedAt,
+    string[] Tags);
+public interface IHayahRunner
+{
+    Task<Result> RunAsync(HayahJob job, CancellationToken token);
+}
+private async Task<Result> RunInternalAsync(HayahJob job, CancellationToken token)
+{
+    using var scope = _scopeFactory.CreateScope();
+    var handler = scope.ServiceProvider.GetRequiredService<IHayahHandler>();
+    return await handler.HandleAsync(job, token);
+}
+        </pre>
+        <pre class="hayah-code hayah-code-extra-left">
+var x = GetId();
+var y = Run();
+foreach (var i in list) { }
+public void Execute() { }
+private ILogger _log;
+return await _client.SendAsync(r);
+if (token.IsCancellationRequested) return;
+throw new InvalidOperationException();
+using var stream = File.OpenRead(path);
+Span<byte> buffer = stackalloc byte[256];
+var id = Guid.NewGuid().ToString("N");
+var stamp = DateTimeOffset.UtcNow;
+var project = new { Name = "Hayah" };
+for (var i = 0; i < 1024; i++) { }
+Task<Result> BuildAsync(Brief b, CancellationToken t);
+var retry = 0; const int maxRetry = 3;
+while (retry++ < maxRetry) { }
+var connection = $"tcp://localhost:{NextPort()}";
+var traceId = TraceId();
+        </pre>
+        <pre class="hayah-code hayah-code-extra-right">
+var x = GetId();
+var y = Run();
+foreach (var i in list) { }
+public void Execute() { }
+private ILogger _log;
+return await _client.SendAsync(r);
+if (token.IsCancellationRequested) return;
+throw new InvalidOperationException();
+using var stream = File.OpenRead(path);
+Span<byte> buffer = stackalloc byte[256];
+var id = Guid.NewGuid().ToString("N");
+var stamp = DateTimeOffset.UtcNow;
+var project = new { Name = "Hayah" };
+for (var i = 0; i < 1024; i++) { }
+Task<Result> BuildAsync(Brief b, CancellationToken t);
+var retry = 0; const int maxRetry = 3;
+while (retry++ < maxRetry) { }
+var connection = $"tcp://localhost:{NextPort()}";
+var traceId = TraceId();
+        </pre>
+    </div>
+    <div class="hayah-reveal-mask"></div>
+    <div class="hayah-logo-hero">
+        <div class="hayah-logo-block">
+            <div class="hayah-logo-wrap">
+                <span class="hayah-logo-glow" aria-hidden="true">@ViewData["SiteTitle"]</span>
+                <span class="hayah-logo">@ViewData["SiteTitle"]</span>
+            </div>
+            <p class="hayah-tagline">From concept to reality.</p>
+        </div>
+    </div>
+    <div class="container position-relative" style="z-index: 2;">
+        <main role="main" class="pb-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="hayah-footer footer mt-auto position-relative">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <span class="small">&copy; @DateTime.Now.Year - @ViewData["SiteTitle"]</span>
+                <span class="small">
+                    <a class="text-decoration-none" href="#top">Back to top ↑</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
