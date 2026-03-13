@@ -426,7 +426,7 @@ a:hover {
   /* Mobile only: badge above the text (floating in hero column) */
   .hayah-starting-price-badge {
     position: absolute;
-    top: calc(9.75rem + 168px);
+    top: calc(9.75rem + 208px);
     right: calc(-0.5rem - 48px);
     width: 315px;
     transform: rotate(-20deg);
