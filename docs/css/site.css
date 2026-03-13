@@ -1,0 +1,1109 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
+
+@font-face {
+  font-family: "Rollmops";
+  src: url("/fonts/Rollmops.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  cursor: url("/images/hayah-cursor.png") 16 16, auto;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  color: #e5e7eb;
+  background-color: #020617;
+  font-family: "Exo 2", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: url("/images/hayah-cursor.png") 16 16, auto;
+}
+
+a {
+  color: #e5e9ff;
+  text-decoration: underline;
+  text-decoration-color: rgba(129, 80, 255, 0.85);
+  text-underline-offset: 0.18em;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration-color: rgba(59, 130, 246, 1);
+}
+
+a {
+  color: #e5e9ff;
+  text-decoration: underline;
+  text-decoration-color: rgba(129, 80, 255, 0.85);
+  text-underline-offset: 0.18em;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration-color: rgba(59, 130, 246, 1);
+}
+
+.hero h1,
+.hero h2,
+.hero h3 {
+  font-family: "Exo 2", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.hayah-logo-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Glow layer: behind the text, same animation, only provides outer glow so the gradient text stays sharp */
+.hayah-logo-glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Rollmops", "Exo 2", sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 10rem;
+  line-height: 1;
+  font-weight: normal;
+  color: transparent;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: hayah-glitch-in-glow 3s steps(10, end) forwards;
+}
+
+.hayah-logo {
+  position: relative;
+  z-index: 1;
+  font-family: "Rollmops", "Exo 2", sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 10rem;
+  line-height: 1;
+  font-weight: normal;
+  background: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  animation: hayah-glitch-in 3s steps(10, end) forwards;
+  text-shadow: none;
+}
+
+@keyframes hayah-glitch-in {
+  /* Phase 1: Long initial fade-in, no glitch */
+  0% {
+    opacity: 0;
+    transform: translate(0, 12px) scale(0.98);
+    text-shadow: none;
+  }
+  25% {
+    opacity: 0.4;
+    transform: translate(0, 6px) scale(0.99);
+    text-shadow: none;
+  }
+  38% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    text-shadow: none;
+  }
+  /* Phase 2: Quick jitter � a few snaps, no left-right swing */
+  45% {
+    transform: translate(-12px, 4px) skewX(-6deg);
+    text-shadow: none;
+  }
+  47% {
+    transform: translate(8px, -2px) skewX(4deg);
+    text-shadow: none;
+  }
+  49% {
+    transform: translate(-4px, 2px) skewX(-3deg);
+    text-shadow: none;
+  }
+  52% {
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow: none;
+  }
+  /* Phase 3: Settle */
+  84% {
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow: none;
+  }
+}
+
+/* Glow layer: same motion as logo, but carries the outer glow so the gradient text stays sharp */
+@keyframes hayah-glitch-in-glow {
+  0% {
+    opacity: 0;
+    transform: translate(0, 12px) scale(0.98);
+    text-shadow:
+      0 0 0 rgba(255, 255, 255, 0),
+      0 0 0 rgba(255, 255, 255, 0),
+      0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    opacity: 0.4;
+    transform: translate(0, 6px) scale(0.99);
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.2),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  38% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.25),
+      0 0 16px rgba(255, 255, 255, 0.15),
+      0 1px 3px rgba(0, 0, 0, 0.35);
+  }
+  45% {
+    transform: translate(-12px, 4px) skewX(-6deg);
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.85),
+      -6px -3px rgba(0, 255, 255, 0.95),
+      6px 3px rgba(255, 0, 128, 0.95),
+      0 4px 6px rgba(0, 0, 0, 0.6);
+  }
+  47% {
+    transform: translate(8px, -2px) skewX(4deg);
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.9),
+      -5px 2px rgba(0, 255, 255, 0.9),
+      5px -2px rgba(255, 0, 128, 0.9),
+      0 4px 8px rgba(0, 0, 0, 0.7);
+  }
+  49% {
+    transform: translate(-4px, 2px) skewX(-3deg);
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.9),
+      -4px -1px rgba(0, 255, 255, 0.9),
+      4px 1px rgba(255, 0, 128, 0.9),
+      0 4px 8px rgba(0, 0, 0, 0.7);
+  }
+  52% {
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow:
+      0 0 14px rgba(255, 255, 255, 0.45),
+      0 0 24px rgba(255, 252, 245, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  84% {
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow:
+      0 0 14px rgba(255, 255, 255, 0.45),
+      0 0 24px rgba(255, 252, 245, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) skewX(0deg);
+    text-shadow:
+      0 0 16px rgba(255, 255, 255, 0.5),
+      0 0 28px rgba(255, 252, 245, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* Looping glitch: snappy jitter, not a smooth sway � use steps so it doesn't tween between skews */
+.hayah-logo-wrap.hayah-logo-loop .hayah-logo {
+  animation: hayah-glitch-loop 18s linear infinite;
+}
+
+.hayah-logo-wrap.hayah-logo-loop .hayah-logo-glow {
+  animation: hayah-glitch-loop-glow 18s linear infinite;
+}
+
+/* Starting at $99 badge anchored to hero text column */
+.hayah-hero-text-col {
+  position: relative;
+}
+
+.hayah-starting-price-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: -3.5rem;
+  width: 260px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+
+@keyframes hayah-glitch-loop {
+  0%, 91% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) skewX(0deg);
+    text-shadow: none;
+  }
+  /* Single sharp glitch frame � one snap, then back (no sway) */
+  92% {
+    transform: translate(-6px, 2px) skewX(-4deg);
+    text-shadow: none;
+  }
+  93%, 100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) skewX(0deg);
+    text-shadow: none;
+  }
+}
+
+@keyframes hayah-glitch-loop-glow {
+  0%, 91% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) skewX(0deg);
+    text-shadow:
+      0 0 16px rgba(255, 255, 255, 0.5),
+      0 0 28px rgba(255, 252, 245, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.45);
+  }
+  92% {
+    transform: translate(-6px, 2px) skewX(-4deg);
+    text-shadow:
+      0 0 8px rgba(255, 255, 255, 0.9),
+      -3px -1px rgba(0, 255, 255, 0.9),
+      3px 1px rgba(255, 0, 128, 0.9),
+      0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  93%, 100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) skewX(0deg);
+    text-shadow:
+      0 0 16px rgba(255, 255, 255, 0.5),
+      0 0 28px rgba(255, 252, 245, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.45);
+  }
+}
+.hayah-logo-hero {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.hayah-logo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hayah-tagline {
+  font-family: "Exo 2", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: calc(-0.5rem - 2px);
+  margin-left: calc(22% + 9px);
+  margin-bottom: 0;
+}
+
+/* About block sits 40px below the logo */
+.hayah-below-logo {
+  margin-top: 40px;
+}
+
+/* About: wider container so the two sections have room; equal space from edges and between sections */
+#about .container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(35px);
+}
+
+#about .row {
+  --bs-gutter-x: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .hayah-logo,
+  .hayah-logo-glow {
+    font-size: 4rem;
+    letter-spacing: 0.15em;
+  }
+
+  /* Re-center hero content on tablets/phones */
+  #about .container {
+    transform: none;
+    padding-inline: 1.25rem;
+  }
+
+   /* Give the highlight card a bit more breathing room under the hero text on mobile */
+   .hayah-highlight-card {
+     margin-top: 1.25rem;
+   }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .hayah-logo,
+  .hayah-logo-glow {
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Nudge the hero text block slightly right after flipping columns (desktop only) */
+  #about .col-lg-6.order-lg-2 {
+    transform: translateX(35px);
+  }
+}
+
+/* Desktop only: ensure badge and hero spacing are correct (never changed by mobile tweaks) */
+@media (min-width: 577px) {
+  .hayah-starting-price-badge {
+    position: absolute;
+    top: calc(1.25rem + 230px);
+    right: calc(-3.5rem - 70px);
+    width: 390px;
+    height: auto;
+    transform: rotate(-20deg);
+  }
+  .hayah-logo-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .hayah-below-logo {
+    margin-top: 40px;
+  }
+  #about.section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Phone?size tweaks (? 430px wide) */
+@media (max-width: 430px) {
+  /* Slightly tighten vertical spacing between sections */
+  .section-padding {
+    padding: 3.25rem 0;
+  }
+
+  /* Make hero heading a bit more compact on phones */
+  #about h2.h2 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+}
+
+/* ==========================================================================
+   MOBILE ONLY (max-width: 576px). Do NOT change desktop/base rules for
+   hero, about, badge, logo, or section spacing. Add overrides here only.
+   ========================================================================== */
+@media (max-width: 576px) {
+  /* Center tagline directly under logo and pull the page up a bit */
+  .hayah-tagline {
+    margin-top: 0.15rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* Mobile only: close gap between logo and main content */
+  .hayah-logo-hero {
+    padding-bottom: 0.75rem;
+  }
+  .hayah-below-logo {
+    margin-top: 12px;
+  }
+  #about.section-padding {
+    padding-top: 1.5rem;
+  }
+
+  /* Mobile only: badge above the text (floating in hero column) */
+  .hayah-starting-price-badge {
+    position: absolute;
+    top: calc(9.75rem + 168px);
+    right: calc(-0.5rem - 48px);
+    width: 315px;
+    transform: rotate(-20deg);
+  }
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.navbar-brand {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: #2563eb !important;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 75vh;
+  padding: 4.5rem 0 3.5rem;
+}
+
+.hero h1 {
+  letter-spacing: -0.03em;
+}
+
+.hero .lead {
+  max-width: 34rem;
+}
+
+.hayah-matrix-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #020617;
+}
+
+.hayah-code {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  min-height: 200vh;
+  width: 20%;
+  padding: 1.5rem 1rem;
+  color: #22ff66;
+  font-family: "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  white-space: pre;
+  text-shadow: 0 0 6px rgba(34, 255, 102, 0.8);
+  overflow: hidden;
+}
+
+.hayah-code-left {
+  left: 0;
+}
+
+.hayah-code-center {
+  left: 40%;
+}
+
+.hayah-code-right {
+  right: 0;
+}
+
+.hayah-code-extra-left {
+  left: 20%;
+}
+
+.hayah-code-extra-right {
+  right: 20%;
+}
+
+.hayah-reveal-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle 120px at var(--hayah-x, 50%) var(--hayah-y, 50%),
+      transparent 0,
+      transparent 60px,
+      rgba(2, 6, 23, 0.75) 90px,
+      #020617 120px
+    );
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+/* Tighter height for the hero/about background box */
+#about.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Tighter height for project portfolio background box */
+#projects.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Tighter height for contact section so it sits closer to portfolio */
+#contact.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Larger section titles under the logo */
+#services h2.h3,
+#projects h2.h3,
+#contact h2.h3 {
+  font-size: 2.25rem; /* 36px */
+  position: relative;
+  display: block; /* keep heading aligned the same way as before */
+}
+
+/* Glowing gradient underline for section titles */
+#services h2.h3::after,
+#projects h2.h3::after,
+#contact h2.h3::after {
+  content: "";
+  position: absolute;
+  bottom: -0.6rem;
+  width: 120px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #22d3ee);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.8);
+}
+
+/* Center the underline under centered titles */
+#services h2.h3::after,
+#projects h2.h3::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Keep the contact underline starting from the left */
+#contact h2.h3::after {
+  left: 0;
+}
+
+@media (min-width: 992px) {
+  .hero {
+    padding: 5.5rem 0 4.5rem;
+  }
+
+  .section-padding {
+    padding: 5rem 0;
+  }
+
+  #about.section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  #projects.section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  #contact.section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+.hero-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(129, 80, 255, 0.4);
+  background: linear-gradient(145deg, #2E05AB 0%, #1900FF 50%, #1a0580 100%);
+  color: #e8e6f0;
+  transform: scale(0.97);
+  opacity: 0.92;
+  transition: transform 0.55s ease, opacity 0.55s ease, box-shadow 0.55s ease, border-color 0.55s ease;
+}
+
+.hero-card:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 16px 48px rgba(46, 5, 171, 0.35);
+  border-color: rgba(25, 0, 255, 0.6);
+}
+
+.hero-card .card-title,
+.hero-card .card-text {
+  color: inherit;
+}
+
+/* Default card styling */
+.card {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(129, 80, 255, 0.4);
+  background: linear-gradient(145deg, #2E05AB 0%, #1900FF 50%, #1a0580 100%);
+  color: #e8e6f0;
+  transform: scale(0.97);
+  opacity: 0.92;
+  transition: transform 0.55s ease, opacity 0.55s ease, box-shadow 0.55s ease, border-color 0.55s ease, background 0.55s ease;
+}
+
+.card .card-title,
+.card .card-text {
+  color: inherit;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 16px 48px rgba(46, 5, 171, 0.35);
+  border-color: rgba(25, 0, 255, 0.6);
+}
+
+/* Project portfolio cards: softer base fill + stronger glow on hover */
+#projects .card {
+  background: radial-gradient(circle at top left, #4f46e5 0%, #1e1b4b 45%, #020617 100%);
+  box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+}
+
+#projects .card:hover {
+  background: radial-gradient(circle at top left, #6366f1 0%, #312e81 45%, #020617 100%);
+  box-shadow:
+    0 0 30px rgba(56, 189, 248, 0.35),
+    0 18px 50px rgba(15, 23, 42, 0.9);
+}
+
+/* Project titles: vivid cyan text with clean glow (no gradient clip) */
+.hayah-project-title {
+  color: #7dd3fc;
+  display: inline-block;
+  text-shadow:
+    0 0 4px rgba(8, 47, 73, 0.9),
+    0 0 10px rgba(56, 189, 248, 0.7),
+    0 0 18px rgba(168, 85, 247, 0.55);
+}
+
+/* Services section � all text white */
+#services,
+#services .card,
+#services .card-title,
+#services .card-text,
+#services .text-secondary,
+#services .card ul,
+#services .card li {
+  color: #ffffff !important;
+}
+
+/* Subtle shadow so services text pops off bright backgrounds */
+#services h3,
+#services p,
+#services li {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Contact section � all text white */
+#contact,
+#contact .text-secondary {
+  color: #ffffff !important;
+}
+
+/* Contact form box: web-design-hero image as background with dark overlay for readability */
+#contact .hayah-content-box-wrap .hayah-content-box {
+  background-image:
+    linear-gradient(135deg, rgba(30, 15, 65, 0.88) 0%, rgba(20, 10, 45, 0.92) 100%),
+    url("/images/web-design-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow:
+    0 0 32px rgba(37, 99, 235, 0.45),
+    0 18px 56px rgba(15, 23, 42, 0.95);
+}
+
+.btn-primary {
+  border-radius: 999px;
+  padding-inline: 1.5rem;
+}
+
+.btn-outline-primary {
+  border-radius: 999px;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+/* Footer blended into background with animated neon accent */
+.hayah-footer {
+  position: relative;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.98) 0%, #020617 55%);
+  color: #9ca3af;
+  border-top: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hayah-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #7c3aed, #2563eb, #22d3ee);
+  background-size: 200% 100%;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.7);
+  animation: hayah-footer-glow 10s linear infinite;
+}
+
+@keyframes hayah-footer-glow {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.hayah-footer a {
+  color: #e5e9ff;
+}
+
+.hayah-footer a:hover {
+  color: #ffffff;
+}
+
+.hayah-about-accent {
+  color: #60a5fa;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.6);
+}
+
+#about .hayah-about-intro {
+  font-size: 18px;
+}
+
+/* Sections that had white boxes � theme background */
+.hayah-section-alt {
+  background-color: rgba(15, 10, 35, 0.95);
+}
+
+.hayah-section-alt .text-dark {
+  color: #e8e6f0 !important;
+}
+
+.hayah-section-alt .text-secondary {
+  color: rgba(232, 230, 240, 0.85) !important;
+}
+
+/* Content boxes (ex�white): theme fill 80% opacity + traveling edge glow */
+.hayah-content-box-wrap {
+  --hayah-card-r: 1rem;
+  --hayah-card-pad: 2px;
+  position: relative;
+  border-radius: var(--hayah-card-r);
+  padding: var(--hayah-card-pad);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hayah-content-box-wrap::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: -50%;
+  transform-origin: 50% 50%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg 240deg,
+    rgba(25, 0, 255, 0.9) 270deg,
+    rgba(255, 255, 255, 0.6) 300deg,
+    rgba(46, 5, 171, 0.9) 330deg,
+    transparent 360deg
+  );
+  animation: hayah-edge-glow 10s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Only show the traveling glow in the 2px edge band; hide it behind the content area */
+.hayah-content-box-wrap::after {
+  content: "";
+  position: absolute;
+  inset: var(--hayah-card-pad);
+  border-radius: calc(var(--hayah-card-r) - var(--hayah-card-pad));
+  z-index: 0.5;
+  pointer-events: none;
+}
+
+.hayah-content-box-wrap:not(.hayah-highlight-card)::after {
+  background: rgba(30, 15, 65, 1);
+}
+
+/* Contact (and other non-highlight) content boxes: same outline + concentric corners as Recent highlight */
+.hayah-content-box-wrap:not(.hayah-highlight-card) {
+  --hayah-card-border: 1px;
+  border: var(--hayah-card-border) solid rgba(25, 0, 255, 0.4);
+}
+
+.hayah-content-box-wrap:not(.hayah-highlight-card)::after {
+  border-radius: calc(var(--hayah-card-r) - var(--hayah-card-pad) - var(--hayah-card-border));
+}
+
+.hayah-content-box-wrap:not(.hayah-highlight-card) .hayah-content-box {
+  border-radius: calc(var(--hayah-card-r) - var(--hayah-card-pad) - var(--hayah-card-border));
+  background: rgba(30, 15, 65, 1);
+}
+
+.hayah-highlight-card::after {
+  background: linear-gradient(160deg, rgba(55, 25, 140, 0.98) 0%, rgba(35, 10, 100, 0.98) 50%, rgba(46, 5, 171, 0.98) 100%);
+}
+
+.hayah-content-box {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 15, 65, 0.8);
+  color: #e8e6f0;
+  border-radius: calc(var(--hayah-card-r, 1rem) - var(--hayah-card-pad, 2px));
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+/* Keep content box radius in sync with wrapper so the edge band has matching corners */
+.hayah-content-box-wrap .hayah-content-box {
+  border-radius: calc(var(--hayah-card-r) - var(--hayah-card-pad));
+}
+
+.hayah-content-box .text-secondary {
+  color: rgba(232, 230, 240, 0.85) !important;
+}
+
+.hayah-content-box .form-label,
+.hayah-content-box .form-control {
+  color: #e8e6f0;
+}
+
+.hayah-content-box .form-control {
+  background: rgba(20, 10, 45, 0.6);
+  border-color: rgba(129, 80, 255, 0.4);
+}
+
+.hayah-content-box .form-control::placeholder {
+  color: rgba(232, 230, 240, 0.5);
+}
+
+/* Recent highlight card � stand out as a featured highlight. Use border for outline so corners align with inner radius. */
+.hayah-highlight-card {
+  --hayah-card-border: 1px;
+  border: var(--hayah-card-border) solid rgba(25, 0, 255, 0.4);
+  box-shadow:
+    0 8px 32px rgba(46, 5, 171, 0.35),
+    0 16px 48px rgba(25, 0, 255, 0.2);
+  margin-left: 4px;
+  transform: scale(1.15);
+  transform-origin: center;
+}
+
+/* Inner radius = wrapper radius minus padding minus border so corners are concentric */
+.hayah-highlight-card::after {
+  inset: var(--hayah-card-pad);
+  border-radius: calc(var(--hayah-card-r) - var(--hayah-card-pad) - var(--hayah-card-border));
+}
+
+.hayah-highlight-card .hayah-content-box {
+  border-radius: calc(var(--hayah-card-r) - var(--hayah-card-pad) - var(--hayah-card-border));
+  background-image:
+    linear-gradient(135deg, rgba(55, 25, 140, 0.88) 0%, rgba(35, 10, 100, 0.9) 50%, rgba(46, 5, 171, 0.88) 100%),
+    url("/images/removed-background-4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(25, 0, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hayah-highlight-card:hover .hayah-content-box {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 1px rgba(25, 0, 255, 0.6),
+    0 16px 48px rgba(46, 5, 171, 0.45),
+    0 24px 64px rgba(25, 0, 255, 0.35);
+}
+
+.hayah-highlight-card .hayah-content-box .text-secondary {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Recent Project Highlights: title centered, body/link text larger */
+.hayah-highlight-title {
+  text-align: center;
+}
+
+.hayah-highlight-card .hayah-content-box .hayah-highlight-body,
+.hayah-highlight-card .hayah-content-box .hayah-highlight-body li {
+  font-size: 1rem;
+}
+
+.hayah-highlight-card .hayah-content-box .mb-2.fw-semibold {
+  font-size: 1.1rem;
+}
+
+.hayah-highlight-card .hayah-content-box .hayah-highlight-link {
+  font-size: 1rem;
+}
+
+@keyframes hayah-edge-glow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hero CTA buttons (original gradient + glow) */
+.hayah-btn-primary {
+  position: relative;
+  border-radius: 999px;
+  padding-inline: 1.9rem;
+  padding-block: 0.8rem;
+  border: none;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 40%, #4f46e5 100%);
+  box-shadow:
+    0 0 0 1px rgba(129, 80, 255, 0.7),
+    0 16px 46px rgba(37, 99, 235, 0.6);
+  color: #f9fafb;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  overflow: hidden;
+}
+
+.hayah-btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.4), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.hayah-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(129, 80, 255, 0.9),
+    0 22px 60px rgba(37, 99, 235, 0.75);
+}
+
+.hayah-btn-primary:hover::before {
+  opacity: 1;
+}
+
+.hayah-btn-secondary {
+  position: relative;
+  border-radius: 999px;
+  padding-inline: 1.9rem;
+  padding-block: 0.8rem;
+  border: 1px solid rgba(129, 80, 255, 0.85);
+  background: rgba(15, 23, 42, 0.82);
+  color: #e5e7eb;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow:
+    0 0 0 1px rgba(37, 99, 235, 0.4),
+    0 0 18px rgba(37, 99, 235, 0.55),
+    0 12px 36px rgba(15, 23, 42, 0.9);
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  overflow: hidden;
+}
+
+.hayah-btn-secondary::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    rgba(129, 80, 255, 0) 0deg,
+    rgba(129, 80, 255, 0.8) 120deg,
+    rgba(37, 99, 235, 0.8) 200deg,
+    rgba(129, 80, 255, 0) 360deg
+  );
+  /* Keep only a thin outer ring, not a fill across the button */
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 1px));
+  opacity: 0.6;
+  pointer-events: none;
+  transform: rotate(0deg);
+  animation: hayah-btn-edge-glow 10s linear infinite;
+}
+
+.hayah-btn-secondary:hover {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12) 0%, rgba(124, 58, 237, 0.14) 100%);
+  color: #f9fafb;
+  border-color: rgba(129, 80, 255, 0.98);
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(129, 80, 255, 0.95),
+    0 0 26px rgba(37, 99, 235, 0.8),
+    0 16px 44px rgba(37, 99, 235, 0.65);
+}
+
+.hayah-btn-secondary:hover::before {
+  opacity: 0.7;
+}
+
+@keyframes hayah-btn-edge-glow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.badge.bg-secondary-subtle {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+/* Website building service card � image as background with light overlay so image is visible; same shape as other cards */
+#services .row .col-md-6:first-child .card {
+  background-image:
+    linear-gradient(135deg, rgba(46, 5, 171, 0.28) 0%, rgba(25, 0, 255, 0.22) 100%),
+    url("/images/website-building-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Android & iOS apps service card */
+#services .row .col-md-6:nth-child(2) .card {
+  background-image:
+    linear-gradient(135deg, rgba(46, 5, 171, 0.4) 0%, rgba(25, 0, 255, 0.32) 100%),
+    url("/images/mobile-apps-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Automation & tools service card */
+#services .row .col-md-6:nth-child(3) .card {
+  background-image:
+    linear-gradient(135deg, rgba(46, 5, 171, 0.4) 0%, rgba(25, 0, 255, 0.32) 100%),
+    url("/images/automation-workflow-purple-card-bg-transparent.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* APIs & integrations service card */
+#services .row .col-md-6:nth-child(4) .card {
+  background-image:
+    linear-gradient(135deg, rgba(46, 5, 171, 0.4) 0%, rgba(25, 0, 255, 0.32) 100%),
+    url("/images/api-integrations-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section + section {
+  scroll-margin-top: 5rem;
+}
