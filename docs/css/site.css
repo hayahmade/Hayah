@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: "Rollmops";
-  src: url("/fonts/Rollmops.ttf") format("truetype");
+  /* Relative path so it works under /Hayah/docs on GitHub Pages */
+  src: url("../fonts/Rollmops.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -10,7 +11,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  cursor: url("/images/hayah-cursor.png") 16 16, auto;
+  cursor: url("../images/hayah-cursor.png") 16 16, auto;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
   color: #e5e7eb;
   background-color: #020617;
   font-family: "Exo 2", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  cursor: url("/images/hayah-cursor.png") 16 16, auto;
+  cursor: url("../images/hayah-cursor.png") 16 16, auto;
 }
 
 a {
@@ -711,7 +712,7 @@ a:hover {
 #contact .hayah-content-box-wrap .hayah-content-box {
   background-image:
     linear-gradient(135deg, rgba(30, 15, 65, 0.88) 0%, rgba(20, 10, 45, 0.92) 100%),
-    url("/images/web-design-hero.png");
+    url("../images/web-design-hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -916,7 +917,7 @@ a:hover {
   border-radius: calc(var(--hayah-card-r) - var(--hayah-card-pad) - var(--hayah-card-border));
   background-image:
     linear-gradient(135deg, rgba(55, 25, 140, 0.88) 0%, rgba(35, 10, 100, 0.9) 50%, rgba(46, 5, 171, 0.88) 100%),
-    url("/images/removed-background-4.png");
+    url("../images/removed-background-4.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1068,7 +1069,7 @@ a:hover {
 #services .row .col-md-6:first-child .card {
   background-image:
     linear-gradient(135deg, rgba(46, 5, 171, 0.28) 0%, rgba(25, 0, 255, 0.22) 100%),
-    url("/images/website-building-bg.png");
+    url("../images/website-building-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1078,7 +1079,7 @@ a:hover {
 #services .row .col-md-6:nth-child(2) .card {
   background-image:
     linear-gradient(135deg, rgba(46, 5, 171, 0.4) 0%, rgba(25, 0, 255, 0.32) 100%),
-    url("/images/mobile-apps-bg.png");
+    url("../images/mobile-apps-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1088,7 +1089,7 @@ a:hover {
 #services .row .col-md-6:nth-child(3) .card {
   background-image:
     linear-gradient(135deg, rgba(46, 5, 171, 0.4) 0%, rgba(25, 0, 255, 0.32) 100%),
-    url("/images/automation-workflow-purple-card-bg-transparent.png");
+    url("../images/automation-workflow-purple-card-bg-transparent.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1098,7 +1099,7 @@ a:hover {
 #services .row .col-md-6:nth-child(4) .card {
   background-image:
     linear-gradient(135deg, rgba(46, 5, 171, 0.4) 0%, rgba(25, 0, 255, 0.32) 100%),
-    url("/images/api-integrations-bg.png");
+    url("../images/api-integrations-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
